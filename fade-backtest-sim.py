@@ -36,25 +36,20 @@ def binarizer(x):
 
 synth_dataset = pd.read_csv("synth_fade_data.csv")
 
-# features = ["overnight_move", "regime", "vol_returns", "safe_haven_returns"]
 features = ["overnight_move"]
 target = "dir"
 
 X = synth_dataset[features]
 Y = synth_dataset[target]
 
-# Model = KNeighborsClassifier(n_neighbors=1).fit(X, Y)
 Model = RandomForestClassifier().fit(X, Y)
 
 ######
 
-polygon_api_key = "KkfCQ7fsZnx0yK4bhX9fD81QplTh0Pf3"
+polygon_api_key = "polygon.io api key, use 'QUANTGALORE' for 10% off."
 calendar = get_calendar("NYSE")
 
 trading_dates = calendar.schedule(start_date = "2000-01-01", end_date = (datetime.today()-timedelta(days = 1))).index.strftime("%Y-%m-%d").values
-
-liquid_tickers_original = pd.read_csv("liquid_tickers.csv")
-liquid_tickers = liquid_tickers_original["ticker"].values
 
 ticker = "SPY"
 
