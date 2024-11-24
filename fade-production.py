@@ -47,7 +47,7 @@ Model = RandomForestClassifier().fit(X, Y)
 
 ######
 
-polygon_api_key = "KkfCQ7fsZnx0yK4bhX9fD81QplTh0Pf3"
+polygon_api_key = "polygon.io api key, use 'QUANTGALORE' for 10% off."
 calendar = get_calendar("NYSE")
 
 trading_dates = calendar.schedule(start_date = "2019-01-01", end_date = (datetime.today())).index.strftime("%Y-%m-%d").values
